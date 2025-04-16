@@ -1,0 +1,141 @@
+/* 로그인 페이지 */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 로그인 박스 */
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;   
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* 폼 요소 */
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    margin-top: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.login-box input {
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+    border-color: #0078d4;
+    outline: none;
+}
+
+/* 비밀번호 입력 컨테이너 */
+.password-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+/* 비밀번호 보기 버튼 */
+.password-container button {
+    background: none;
+    border: none;
+    color: #0078d4;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+    align-self: flex-end; /* 오른쪽 정렬 */
+    font-weight: 600; /* 글씨 강조 */
+}
+
+/* 비밀번호 입력란 */
+.password-container input {
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+}
+
+.password-container input:focus {
+    border-color: #0078d4;
+    outline: none;
+}
+
+/* 로그인 버튼 */
+.login-box button {
+    margin-top: 24px;
+    padding: 12px;
+    background-color: #0078d4;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-box button:hover {
+    background-color: #005ea2;
+    transform: translateY(-2px);
+}
+
+.login-box button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 오류 메시지 */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* 링크 */
+.login-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #0078d4;
+    cursor: pointer;
+}
+
+.login-links span:hover {
+    text-decoration: underline;
+}

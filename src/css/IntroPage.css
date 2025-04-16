@@ -1,0 +1,190 @@
+/* 전체 페이지 */
+.intro-page {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 상단 배너 */
+.top-banner {
+    background: linear-gradient(to right, #f6f7fb, #e9ecf3);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+.banner-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e2e2e;
+    flex-grow: 1;
+}
+
+.get-app-btn {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.get-app-btn:hover {
+    background-color: #005a99;
+}
+
+/* 네비게이션 */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin-left: 20px;
+}
+
+.nav-left li {
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav-left li:hover {
+    color: #0078d4;
+}
+
+.nav-logo {
+    height: 32px;
+}
+
+.nav-right .login-btn {
+    background: none;
+    border: 1px solid #0078d4;
+    color: #0078d4;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-right .login-btn:hover {
+    background-color: #0078d4;
+    color: white;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 100px;
+    background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+}
+
+.hero-text {
+    max-width: 55%;
+    padding-right: 50px;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: #2c2c2c;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-btn {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #005a99;
+}
+
+.hero-image img {
+    max-width: 520px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* 로그인/로그아웃 관련 */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.logout-btn {
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d9363d;
+}

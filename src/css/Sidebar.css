@@ -1,0 +1,76 @@
+/* 사이드바 */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 20px;
+    position: fixed;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); /* 부드러운 그림자 추가 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 사이드바 제목 */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* 사용자 정보 */
+.user-info {
+    background: rgba(255, 255, 255, 0.1); /* 배경을 약간 흐리게 */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 14px; /* 폰트 크기 조정 */
+    color: #e0e0e0; /* 부드러운 회색 */
+}
+
+.user-info hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+/* 메뉴 버튼 */
+.menu button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 12px;
+    margin: 8px 0;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px; /* 버튼 모서리 둥글게 */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05); /* 살짝 확대되는 효과 */
+}
+
+.menu button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(0.98); /* 눌렀을 때 살짝 축소 */
+}
+
+/* 흐림 배경 효과 */
+.blur-background {
+    filter: blur(5px);
+}
+
+/* 스타일을 부드럽고 현대적인 느낌으로 수정 */
