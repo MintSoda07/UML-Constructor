@@ -17,7 +17,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({ closeModal }) =
     };
 
     return (
-        <div className="modal-content">
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>프로젝트 생성</h2>
             <label>프로젝트명</label>
             <input

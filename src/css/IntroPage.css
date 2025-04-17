@@ -10,8 +10,8 @@
 
 /* 상단 배너 */
 .top-banner {
-    background: linear-gradient(to right, #f6f7fb, #e9ecf3);
-    padding: 20px 30px;
+    background: white;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,13 +20,14 @@
 
 .banner-content {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 20px;
+    margin-bottom: 10px;
 }
 
 .logo {
-    width: 45px;
-    height: 45px;
+    width: 360px;
+    height: 240px;
 }
 
 .banner-text {

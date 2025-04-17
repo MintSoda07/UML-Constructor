@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className={`container ${isBackgroundBlurred ? 'blurred' : ''}`}>
+      <div className={`container ${isBackgroundBlurred ? 'blurred' : ''}`} >
         <Sidebar openModal={openModal} />
         <div className="main-content">
           <div className="schedule-container">
@@ -35,25 +35,25 @@ function App() {
         className={`modal ${showModal ? 'open' : ''}`}
         onClick={closeModal} // 바깥 영역 클릭 시 닫기
       >
-        <div
-          className="modal-content"
-          onClick={(e) => e.stopPropagation()} // 내부 클릭 시 닫힘 방지
-        >
-          {/* 프로젝트 생성 모달 */}
-          {showModal === 'create' && <CreateProjectModal closeModal={closeModal} />}
-          
-          {/* 프로젝트 열기 모달 */}
-          {showModal === 'open' && (
-            <>
-              <h2>프로젝트 열기</h2>
-              <p>프로젝트 파일을 불러오는 중...</p>
-              <ProjectList /> {/* 프로젝트 목록 */}
-              <button onClick={closeModal}>닫기</button>
-            </>
-          )}
-        </div>
+
+        {/* 프로젝트 생성 모달 */}
+        {showModal === 'create' && <CreateProjectModal closeModal={closeModal} />}
+
+        {/* 프로젝트 열기 모달 */}
+        {showModal === 'open' && (
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()} // 내부 클릭 시 닫힘 방지
+          >
+            <h2>프로젝트 열기</h2>
+            <p>프로젝트 파일을 불러오는 중...</p>
+            <ProjectList /> {/* 프로젝트 목록 */}
+            <button onClick={closeModal}>닫기</button>
+          </div>
+        )}
       </div>
     </div>
+
   );
 }
 
