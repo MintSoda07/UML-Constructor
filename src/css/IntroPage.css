@@ -26,8 +26,8 @@
 }
 
 .logo {
-    width: 360px;
-    height: 240px;
+    width: 240px;
+    height: 160px;
 }
 
 .banner-text {
@@ -35,8 +35,12 @@
     font-weight: 600;
     color: #2e2e2e;
     flex-grow: 1;
+    margin-bottom: 8px;
 }
-
+#title-logo{
+    color:#0078d4;
+    font-size: 20px;
+}
 .get-app-btn {
     background-color: #0078d4;
     color: white;
@@ -44,7 +48,7 @@
     padding: 12px 20px;
     border-radius: 6px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../ts/firebase'; // firebase.ts에서 가져오기
+import { auth, db } from '../ts/firebase';
+import { doc, getDoc } from 'firebase/firestore';
 import '../css/LoginPage.css';
 
 const LoginPage = () => {
@@ -9,22 +10,20 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [isLoading, setIsLoading] = useState(false); // 로딩 상태 추가
-    const [passwordVisible, setPasswordVisible] = useState(false); // 비밀번호 표시 토글
+    const [isLoading, setIsLoading] = useState(false);
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setError(''); // 로그인 시 오류 메시지 초기화
-        setIsLoading(true); // 로딩 시작
+        setError('');
+        setIsLoading(true);
 
-        // 이메일 형식 확인
         if (!email.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
             setIsLoading(false);
             setError('올바른 이메일 주소를 입력하세요.');
             return;
         }
 
-        // 비밀번호 길이 확인 (최소 6자 이상)
         if (password.length < 6) {
             setIsLoading(false);
             setError('비밀번호는 최소 6자 이상이어야 합니다.');
@@ -32,10 +31,44 @@ const LoginPage = () => {
         }
 
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("로그인 성공, UID:", user.uid);
+
+            const userDocRef = doc(db, "userData", user.uid);
+            const userSnapshot = await getDoc(userDocRef);
+
+            if (userSnapshot.exists()) {
+                const userData = userSnapshot.data();
+
+                let organizationData = { id: '', name: '' };
+
+                if (userData.organization) {
+                    const orgRef = userData.organization; // DocumentReference
+                    const orgSnap = await getDoc(orgRef);
+                    if (orgSnap.exists()) {
+                        organizationData = {
+                            id: orgRef.id,
+                            name: (orgSnap.data() as { name: string }).name,
+                        };
+                    }
+                }
+
+                const fullUserData = {
+                    name: userData.name,
+                    position: userData.position,
+                    description: userData.description,
+                    organization: organizationData,
+                };
+
+                localStorage.setItem("userData", JSON.stringify(fullUserData));
+            } else {
+                console.warn("Firestore에 사용자 정보가 존재하지 않습니다.");
+            }
+
             navigate('/app');
         } catch (err: any) {
-            setIsLoading(false); // 로그인 실패 시 로딩 종료
+            setIsLoading(false);
             if (err.code === 'auth/user-not-found') {
                 setError('이메일 주소를 찾을 수 없습니다.');
             } else if (err.code === 'auth/wrong-password') {

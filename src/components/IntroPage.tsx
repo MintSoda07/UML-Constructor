@@ -7,16 +7,32 @@ import umlTitle from '../resource/umlTitle.png';
 
 const IntroPage = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState<any>(null); // 로그인한 사용자 정보
+    const [user, setUser] = useState<any>(null); // Firebase 사용자
+    const [userInfo, setUserInfo] = useState<{ name: string, position: string } | null>(null); // Firestore 사용자 정보
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser); // 현재 사용자 상태를 업데이트
+            setUser(currentUser);
+
+            if (currentUser) {
+                // localStorage에서 사용자 정보 로드
+                const storedData = localStorage.getItem("userData");
+                if (storedData) {
+                    const parsedData = JSON.parse(storedData);
+                    setUserInfo({
+                        name: parsedData.name || '사용자',
+                        position: parsedData.position || '직급 없음'
+                    });
+                } else {
+                    console.warn("localStorage에 사용자 정보가 없습니다.");
+                }
+            } else {
+                setUserInfo(null);
+            }
         });
 
-        return () => unsubscribe(); // 컴포넌트 언마운트 시 구독 해제
+        return () => unsubscribe();
     }, []);
-
     const handleStartClick = () => {
         if (user) {
             navigate('/app'); // 로그인된 사용자는 바로 /app으로 이동
@@ -47,7 +63,7 @@ const IntroPage = () => {
 
             <nav className="top-nav">
                 <div className="nav-left">
-                    <img src={umlTitle} alt="logo" className="nav-logo" />
+                    <p id="title-logo">UML CONSTRUCTOR</p>
                     <ul>
                         <li>소개</li>
                         <li>기능</li>
@@ -57,12 +73,15 @@ const IntroPage = () => {
                 <div className="nav-right">
                     {user ? (
                         <div className="user-info">
-                            <span className="user-name">{user.displayName || '사용자'}</span>
+                            <span className="user-name">
+                                {userInfo?.name || '사용자'} ({userInfo?.position || '직급 없음'})
+                            </span>
                             <button className="logout-btn" onClick={handleLogout}>로그아웃</button>
                         </div>
                     ) : (
                         <button className="login-btn" onClick={() => navigate('login')}>로그인</button>
                     )}
+
                 </div>
             </nav>
 
