@@ -46,7 +46,6 @@ function App() {
             onClick={(e) => e.stopPropagation()} // 내부 클릭 시 닫힘 방지
           >
             <h2>프로젝트 열기</h2>
-            <p>프로젝트 파일을 불러오는 중...</p>
             <ProjectList /> {/* 프로젝트 목록 */}
             <button onClick={closeModal}>닫기</button>
           </div>

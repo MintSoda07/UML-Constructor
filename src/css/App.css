@@ -102,3 +102,22 @@
 .sidebar button:hover {
   background-color: #444;
 }
+
+/* src/css/CreateProjectModal.css (또는 Sidebar.css 등) */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-top: 2px solid #333;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}

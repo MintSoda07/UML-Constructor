@@ -1,0 +1,326 @@
+.project-page {
+    padding: 48px;
+    background: linear-gradient(to right, #f5f7fa, #e4ecf4);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.project-header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.header-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.header-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.header-card h2 {
+    font-size: 15px;
+    color: #6c757d;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.header-card p {
+    font-size: 22px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.tab-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 12px;
+}
+
+.tab-menu button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    transition: all 0.25s;
+}
+
+.tab-menu button.active {
+    background: #4a6cf7;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.4);
+}
+
+.tab-menu button:hover {
+    background: #e2e6f3;
+    color: #495057;
+}
+
+.tab-icon {
+    font-size: 20px;
+}
+
+.tab-content .card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.create-diagram-button {
+    background: #4a6cf7;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.create-diagram-button:hover {
+    background: #3c5bdc;
+}
+
+/* ProjectPage.css */
+
+/* 기존 스타일 유지 */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background-color: #f4f4f4;
+}
+
+.schedule-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.view-mode-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.view-mode-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.view-mode-buttons button:hover {
+    background-color: #d5d5d5;
+    transform: translateY(-2px);
+}
+
+.view-mode-buttons button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.schedule-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule-list li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-calendar .has-schedule {
+    background-color: #ff4d4f;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin: auto;
+}
+
+/* 📅 달력(Calendar) 꾸미기 */
+.react-calendar {
+    width: 95%;
+    max-width: 95%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.174);
+}
+
+.react-calendar__navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.react-calendar__navigation button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.react-calendar__navigation button:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    color: #007bff;
+}
+
+.react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.react-calendar__tile {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 0.9em;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.react-calendar__tile:hover {
+    background-color: #f0f0f0;
+}
+
+.react-calendar__tile--active {
+    background-color: #007bff;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.react-calendar__tile--now {
+    background-color: #e6f0ff;
+    border-radius: 5px;
+}
+.schedule-calendar .has-schedule {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    margin-top: 4px;
+  }
+  
+  /* 상태별 색상 점 */
+  .schedule-calendar .has-schedule.InProgress {
+    background-color: #3399ff; /* 파란색 */
+  }
+  
+  .schedule-calendar .has-schedule.Complete {
+    background-color: #28a745; /* 초록색 */
+  }
+  
+  .schedule-calendar .has-schedule.Await {
+    background-color: #dc3545; /* 붉은색 */
+  }
+  
+
+/* ProjectPage.css */
+
+/* 프로젝트 리스트를 표 스타일로 */
+.schedule-table-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.schedule-table-list th,
+.schedule-table-list td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.schedule-table-list thead {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.schedule-table-list tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.schedule-table-list tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.schedule-table-list tbody tr:hover {
+    background-color: #e6f0ff;
+}
+
+.schedule-table-list th {
+    color: #333;
+}
+
+.schedule-table-list td {
+    color: #555;
+}
+
+/* 상태에 따라 색깔 다른 뱃지 스타일 */
+.status-label {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.status-label.inprogress {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status-label.complete {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-label.await {
+    background-color: #f8d7da;
+    color: #721c24;
+}
