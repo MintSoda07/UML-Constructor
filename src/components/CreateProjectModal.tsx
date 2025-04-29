@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../ts/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth'; // ✅ 추가
+import { getAuth } from 'firebase/auth'; // 추가
 
 interface CreateProjectModalProps {
     closeModal: () => void;
@@ -61,7 +61,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({ closeModal }) =
                 joinedAt: serverTimestamp(),
             });
 
-            // ✅ 프로젝트 최초 일정 추가
+            // 프로젝트 최초 일정 추가
             const scheduleId = `init-${Date.now()}`; // 고유 ID 생성 (ex. init-1714412341234)
             const scheduleRef = doc(db, 'organization', organizationId, 'project', projectCode, 'schedule', scheduleId);
             await setDoc(scheduleRef, {

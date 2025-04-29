@@ -18,6 +18,7 @@
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
 }
 
 .header-card:hover {
@@ -100,7 +101,92 @@
     background: #3c5bdc;
 }
 
-/* ProjectPage.css */
+/* 참여자 명단 */
+.department-accordion {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    background-color: #fcfcfc;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.department-summary {
+    cursor: pointer;
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #2a2a2a;
+    transition: background-color 0.2s ease;
+}
+
+.department-summary:hover {
+    background-color: #eaeaea;
+}
+
+.department-name {
+    font-size: 1.05rem;
+}
+
+.department-count {
+    margin-left: 12px;
+    background-color: #0078d4;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.participant-list {
+    list-style: none;
+    padding: 0 20px 16px 20px;
+    margin: 0;
+}
+
+.participant-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.participant-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #d0e2ff;
+    color: #004578;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.participant-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.participant-item:last-child {
+    border-bottom: none;
+}
+
+
+.participant-name {
+    font-weight: 500;
+    color: #2a2a2a;
+}
+
+.participant-role {
+    font-size: 0.85rem;
+    color: #666;
+}
 
 /* 기존 스타일 유지 */
 .schedule-table {
@@ -237,26 +323,30 @@
     background-color: #e6f0ff;
     border-radius: 5px;
 }
+
 .schedule-calendar .has-schedule {
     border-radius: 50%;
     width: 6px;
     height: 6px;
     margin-top: 4px;
-  }
-  
-  /* 상태별 색상 점 */
-  .schedule-calendar .has-schedule.InProgress {
-    background-color: #3399ff; /* 파란색 */
-  }
-  
-  .schedule-calendar .has-schedule.Complete {
-    background-color: #28a745; /* 초록색 */
-  }
-  
-  .schedule-calendar .has-schedule.Await {
-    background-color: #dc3545; /* 붉은색 */
-  }
-  
+}
+
+/* 상태별 색상 점 */
+.schedule-calendar .has-schedule.InProgress {
+    background-color: #3399ff;
+    /* 파란색 */
+}
+
+.schedule-calendar .has-schedule.Complete {
+    background-color: #28a745;
+    /* 초록색 */
+}
+
+.schedule-calendar .has-schedule.Await {
+    background-color: #dc3545;
+    /* 붉은색 */
+}
+
 
 /* ProjectPage.css */
 
@@ -276,7 +366,7 @@
 }
 
 .schedule-table-list thead {
-    background-color: #f8f9fa;
+    background-color: #e7e7e7;
     font-weight: bold;
 }
 
@@ -323,4 +413,160 @@
 .status-label.await {
     background-color: #f8d7da;
     color: #721c24;
+}
+
+
+/* 다이어그램 */
+.diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.diagram-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.diagram-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 120, 212, 0.15);
+}
+
+.diagram-card h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1b1a19;
+}
+
+.diagram-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #605e5c;
+}
+
+/* 다이어그램이 존재하지 않는 경우 메시지 스타일 */
+.diagram-card-empty {
+    font-size: 18px;
+    color: #888888;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* "기존 다이어그램 리스트" 문구 스타일 */
+.card .diagram-grid+div {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #6E6E6E;
+}
+
+.diagram-list-container {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.diagram-group {
+    margin-bottom: 1.5rem;
+}
+
+.diagram-group-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #0078d4;
+    padding-left: 0.5rem;
+}
+
+.diagram-group-list {
+    padding-left: 1.2rem;
+}
+
+.diagram-list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-radius: 4px;
+}
+
+.diagram-list-item:hover {
+    background: #e5f1fb;
+}
+
+.diagram-list-bullet {
+    margin-right: 0.5rem;
+    color: #0078d4;
+    font-weight: bold;
+}
+
+.diagram-list-name {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.diagram-list-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.diagram-list-name {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.diagram-list-meta {
+    font-size: 0.8rem;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+    gap: 0.3rem;
+}
+
+.meta-label {
+    color: #888;
+    font-weight: 400;
+}
+
+.meta-value {
+    color: #444;
+}
+
+.meta-separator {
+    margin: 0 0.3rem;
+    color: #ccc;
+}
+
+/* 로딩 오버레이 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 9999;
 }

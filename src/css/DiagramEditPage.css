@@ -1,0 +1,105 @@
+/* .editor-container */
+.editor-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f5;
+    color: #333333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+
+/* 툴바 영역 */
+.editor-toolbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* 정보 영역: 수평 배치 및  배경 추가 */
+.editor-info-container {
+    width: 100vw;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #f5f5f5;
+    background-color: #0078D4;  /* 파란색 배경 */
+    padding: 16px 24px;
+}
+
+/* 각 항목 */
+.editor-info-container div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+/* 레이블 스타일 */
+.editor-info-container .label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #f5f5f5;
+}
+
+/* 버튼 영역: 수평 배치 */
+.editor-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;  /* 버튼을 왼쪽 정렬 */
+    width: 100vw;
+}
+
+/* 기본 버튼 스타일 */
+.button {
+    padding: 12px 20px;  /* 여유있는 여백 */
+    background-color: #afafaf;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    background-color: #005a9e;
+    transform: translateY(-1px); /* 살짝 떠오르는 효과 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* 부드러운 그림자 효과 */
+}
+
+/* secondary 버튼 스타일 */
+.button.secondary {
+    background-color: #e1e1e1;
+    color: #333333;
+    border: 1px solid #cccccc;
+}
+
+.button.secondary:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-1px);  /* secondary 버튼에도 호버 효과 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* 부드러운 그림자 효과 */
+}
+
+/* 다이어그램 캔버스 */
+.diagram-canvas {
+    height: 88vh;  /* 화면 높이의 80% */
+    width: 98vw;  /* 화면 너비의 100% */
+    left:1vw;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 스크롤 숨기기 */
+}
