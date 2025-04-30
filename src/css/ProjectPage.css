@@ -70,8 +70,8 @@
 }
 
 .tab-menu button:hover {
-    background: #e2e6f3;
-    color: #495057;
+    color: rgb(16, 16, 16);
+    box-shadow: 0 4px 4px rgba(74, 108, 247, 0.4);
 }
 
 .tab-icon {
