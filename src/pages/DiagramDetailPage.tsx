@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import DiagramEditPage from '../components/ClassDiagramEditPage';
+import { DiagramData } from '../components/DiagramEditComponentProps';
+import ClassDiagramEditPage from '../components/ClassDiagramEditPage';
 import '../css/DiagramEditPage.css'
-
-interface DiagramData {
-    id: string;
-    name: string;
-    description: string;
-}
 
 const DiagramDetailPage: React.FC = () => {
     const { organizationId, projectCode, diagramType, diagramId } = useParams();
@@ -40,7 +35,7 @@ const DiagramDetailPage: React.FC = () => {
     const renderDiagramEditPage = () => {
         switch (diagramType) {
             case 'class_diagram':
-                return <DiagramEditPage diagram={diagram} />;
+                return  <ClassDiagramEditPage diagram={diagram} />;
             default:
                 return <div>지원되지 않는 다이어그램 타입입니다.</div>;
         }
